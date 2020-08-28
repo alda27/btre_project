@@ -19,7 +19,8 @@ def index(request):
 def listing(request, listing_id):
     listing = get_object_or_404(Listing, pk=listing_id)
     realtor_mvp = Realtor.objects.all().filter(is_mvp=True)
-    context = {'listing': listing,'realtor_mvp': realtor_mvp}
+    context = {'listing': listing,
+               'realtor_mvp': realtor_mvp}
     return render(request, 'listings/listing.html', context)
 
 
